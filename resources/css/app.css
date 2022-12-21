@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    @variants responsive {
+        .masonry {
+            column-gap: 1.5em;
+            column-count: 1;
+        }
+        .masonry-sm {
+            column-gap: 1.5em;
+            column-count: 2;
+        }
+        .masonry-md {
+            column-gap: 1.5em;
+            column-count: 3;
+        }
+        .break-inside {
+            break-inside: avoid;
+        }
+
+    }
+}
+
+input[type=file]::-webkit-file-upload-button,
+input[type=file]::file-selector-button {
+    @apply text-white bg-gray-400 hover:bg-gray-500 font-medium text-xs cursor-pointer border-0 py-3 ltr:pl-8 ltr:pr-4 rtl:pr-8 rtl:pl-4;
+    margin-inline-start: -1rem;
+    margin-inline-end: 1rem;
+}
