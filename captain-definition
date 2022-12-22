@@ -4,6 +4,6 @@
     "FROM webdevops/php-nginx:8.2-alpine",
     "COPY . /temporary",
     "WORKDIR /app",
-    "RUN rm -rf ."
+    "RUN rm -rf ./"
   ]
 }
