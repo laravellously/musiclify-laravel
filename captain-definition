@@ -1,8 +1,15 @@
  {
   "schemaVersion": 2,
   "dockerfileLines": [
-    "FROM composer:2.0 as build",
-    "COPY . /app/",
-    "RUN composer update --prefer-dist --no-dev --optimize-autoloader --no-interaction"
+    "FROM webdevops/php-nginx:8.2-alpine",
+    "USER www-data",
+    "WORKDIR /app",
+    "COPY --chown=www-data:www-data . /app",
+    "RUN chmod +rwx /app",
+    "RUN chmod -R 777 /app",
+    "RUN npm install",
+    "RUN npm run prod",
+    "RUN composer install --working-dir='/app' --prefer-dist --no-dev --optimize-autoloader --no-interaction",
+    "RUN composer dump-autoload --working-dir='/app'"
   ]
 }
