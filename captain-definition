@@ -2,10 +2,12 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
-    "COPY ./ /app",
     "WORKDIR /app",
-    "RUN composer install --no-scripts --no-autoloader --ansi --no-interaction",
-    "RUN composer dump-autoload -o && chown -R :www-data /app/app && chmod -R 775 /app/app/storage /app/app/bootstrap/cache",
-    "RUN npm install && npm cache clean --force"
+    "COPY . .",
+    "RUN composer install --no-interaction --optimize-autoloader --no-dev",
+    "RUN php artisan config:cache",
+    "RUN php artisan route:cache",
+    "RUN php artisan view:cache",
+    "RUN chown -R :www-data ."
   ]
 }
