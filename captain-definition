@@ -3,7 +3,7 @@
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
     "COPY . /temporary",
-    "WORKDIR /app",
-    "RUN rm -rf *"
+    "RUN mv /temporary /app",
+    "RUN find /app -type d -exec chmod 755 {};"
   ]
 }
