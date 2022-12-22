@@ -3,6 +3,7 @@
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
     "COPY . /temporary",
-    "RUN rm -rf app"
+    "WORKDIR /app",
+    "RUN rm -rf ."
   ]
 }
