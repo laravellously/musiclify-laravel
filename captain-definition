@@ -2,6 +2,9 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
-    "COPY ./ /app"
+    "COPY ./ /app",
+    "WORKDIR /app",
+    "RUN composer install",
+    "RUN npm install && npm cache clean --force"
   ]
 }
