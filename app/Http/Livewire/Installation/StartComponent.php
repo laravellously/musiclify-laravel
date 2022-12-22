@@ -64,6 +64,18 @@ class StartComponent extends Component
      */
     public function next()
     {
+        // Check if purchase code and username are valid
+        if (!$this->purchase_code || !$this->username) {
+            
+            // Error
+            $this->dispatchBrowserEvent('alert',[
+                "message" => "Please insert your purchase code and CodeCanyon username",
+                "type"    => "error"
+            ]);
+
+            return;
+
+        }
 
         // Set purchase code and username
         Config::write('envato.purchase_code', $this->purchase_code);

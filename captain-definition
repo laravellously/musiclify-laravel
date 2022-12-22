@@ -5,8 +5,6 @@
     "COPY . /app",
     "WORKDIR /app",
     "RUN chmod +rwx /app",
-    "RUN chmod -R 777 /app",
-    "RUN composer install --prefer-dist --no-dev --optimize-autoloader --no-interaction",
-    "RUN composer dump-autoload"
+    "RUN chmod -R 777 /app"
   ]
 }

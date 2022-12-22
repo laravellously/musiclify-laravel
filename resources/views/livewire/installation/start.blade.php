@@ -159,7 +159,7 @@
                     <div class="w-full mt-6">
                         <x-forms.text-input
                             label="Your purchase code"
-                            placeholder="Random Value"
+                            placeholder="Please enter your purchase code"
                             model="purchase_code"
                             icon="key" />
                     </div>
@@ -168,7 +168,7 @@
                     <div class="w-full mt-4">
                         <x-forms.text-input
                             label="Your CodeCanyon username"
-                            placeholder="Random Value"
+                            placeholder="Please enter your CodeCanyon username"
                             model="username"
                             icon="account" />
                     </div>
