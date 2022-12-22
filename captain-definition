@@ -2,11 +2,11 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
-    "WORKDIR /app",
     "COPY . /app",
+    "WORKDIR /app",
     "RUN chmod +rwx /app",
     "RUN chmod -R 777 /app",
-    "RUN composer install --working-dir='/app' --prefer-dist --no-dev --optimize-autoloader --no-interaction",
-    "RUN composer dump-autoload --working-dir='/app'"
+    "RUN composer install --prefer-dist --no-dev --optimize-autoloader --no-interaction",
+    "RUN composer dump-autoload"
   ]
 }
