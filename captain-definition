@@ -3,8 +3,7 @@
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
     "WORKDIR /app",
-    "COPY . .",
-    "RUN chown -R :www-data .",
-    "RUN chmod -R 777 storage"
+    "COPY --chown=www-data:www-data . .",
+    "RUN chmod -R 775 bootstrap storage"
   ]
 }
