@@ -1,0 +1,27 @@
+{
+    "name": "loveycom/cashfree",
+    "description": "A package for CashFree Payment Gateway.",
+    "type": "library",
+    "require": {},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kayode Omolaoye",
+            "email": "kayodeomolaoye@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LoveyCom\\CashFree\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LoveyCom\\CashFree\\CashFreeServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
