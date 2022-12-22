@@ -2,6 +2,8 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
-    "COPY --chown=www-data:www-data . /app"
+    "COPY --chown=www-data:www-data . /app",
+    "WORKDIR /app",
+    "RUN composer install --prefer-dist --no-dev --optimize-autoloader --no-interaction"
   ]
 }
