@@ -4,10 +4,8 @@
     "FROM webdevops/php-nginx:8.2-alpine",
     "COPY ./ /app",
     "WORKDIR /app",
-    "RUN chown :www-data app storage bootstrap -R",
-    "RUN chmod 775 app storage bootstrap -R",
-    "RUN composer install",
-    "RUN php artisan config:cache",
+    "RUN composer install --no-scripts --no-autoloader --ansi --no-interaction",
+    "RUN composer dump-autoload -o && chown -R :www-data /app/app && chmod -R 775 /app/app/storage /app/app/bootstrap/cache",
     "RUN npm install && npm cache clean --force"
   ]
 }
