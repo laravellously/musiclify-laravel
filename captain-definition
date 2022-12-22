@@ -6,8 +6,6 @@
     "COPY . /app",
     "RUN chmod +rwx /app",
     "RUN chmod -R 777 /app",
-    "RUN npm install",
-    "RUN npm run prod",
     "RUN composer install --working-dir='/app' --prefer-dist --no-dev --optimize-autoloader --no-interaction",
     "RUN composer dump-autoload --working-dir='/app'"
   ]
