@@ -4,6 +4,7 @@
     "FROM webdevops/php-nginx:8.2-alpine",
     "WORKDIR /app",
     "COPY . .",
+    "RUN ls -la && ls -la bootstrap",
     "RUN composer install --no-interaction --optimize-autoloader --no-dev",
     "RUN php artisan config:cache",
     "RUN php artisan route:cache",
