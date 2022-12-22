@@ -54,7 +54,8 @@ COPY /docker/php.ini /etc/php/8.2/cli/conf.d/99-sail.ini
 RUN chmod +x /usr/local/bin/start-container
 
 COPY --chown=${WWWUSER}:${WWWGROUP} . .
-RUN mkdir -p /var/www/html/storage/framework/cache /var/www/html/storage/framework/sessions /var/www/html/storage/framework/views \
+RUN cd /var/www/html/storage/ \
+    && mkdir -p framework/{sessions,views,cache} \
     && chmod -R 775 /var/www/html/{storage,bootstrap,app} -R
 
 EXPOSE 8000
