@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
-    "COPY ./ /app",
+    "COPY . /app",
     "RUN composer update"
   ]
 }
