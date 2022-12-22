@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'app_url' => 'https://musichub.server.bluudigital.com',
+    'app_url' => $app_url,
 
     /*
     |--------------------------------------------------------------------------
