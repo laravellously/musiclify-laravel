@@ -5,8 +5,6 @@
     "WORKDIR /app",
     "COPY . .",
     "RUN chown -R :www-data .",
-    "RUN chmod -R 777 storage",
-    "RUN composer install --no-interaction --optimize-autoloader --no-dev",
-    "RUN php artisan optimize:cache"
+    "RUN chmod -R 777 storage"
   ]
 }
