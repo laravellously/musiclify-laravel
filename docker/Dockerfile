@@ -55,8 +55,7 @@ RUN chmod +x /usr/local/bin/start-container
 
 COPY --chown=${WWWUSER}:${WWWGROUP} . .
 RUN cd /var/www/html/storage/ \
-    && mkdir -p framework/{sessions,views,cache} \
-    && chmod -R 775 /var/www/html/{storage,bootstrap,app} -R
+    && mkdir -p framework/sessions framework/views framework/cache
 
 EXPOSE 8000
 
