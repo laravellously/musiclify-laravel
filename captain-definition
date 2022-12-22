@@ -2,6 +2,6 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
-    "COPY --chown=www-data:www-data . /temporary"
+    "COPY --chown=www-data:www-data . /app"
   ]
 }
