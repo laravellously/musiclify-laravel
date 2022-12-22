@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'app_url' => $app_url,
+    'app_url' => 'https://musiclify-laravel.xhjv3x.easypanel.host',
 
     /*
     |--------------------------------------------------------------------------
