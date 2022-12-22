@@ -55,8 +55,11 @@ RUN chmod +x /usr/local/bin/start-container
 
 COPY --chown=${WWWUSER}:${WWWGROUP} . .
 
-RUN composer update
-RUN npm i && npm run prod
+# RUN composer install --optimize-autoloader --no-dev
+RUN php artisan config:cache
+RUN php artisan route:cache
+RUN php artisan view:cache
+# RUN npm i && npm run prod
 
 EXPOSE 8000
 
