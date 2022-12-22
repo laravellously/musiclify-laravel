@@ -7,7 +7,7 @@ try {
     } else {
         $app_url = url('/');
     }
-    
+
 } catch (\Throwable $th) {
     $app_url = null;
 }
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'app_url' => $app_url,
+    'app_url' => 'https://musichub.server.bluudigital.com',
 
     /*
     |--------------------------------------------------------------------------
