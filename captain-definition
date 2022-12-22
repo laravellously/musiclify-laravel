@@ -2,8 +2,6 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM webdevops/php-nginx:8.2-alpine",
-    "COPY . /temporary",
-    "RUN mv /temporary /app",
-    "RUN find /app -type d -exec chmod 755 {};"
+    "COPY --chown=www-data:www-data . /temporary"
   ]
 }
